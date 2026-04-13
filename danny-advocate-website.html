@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Danny Parikh - Advocate</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    input, button {
+      padding: 12px;
+      margin: 8px;
+      width: 85%;
+      border-radius: 8px;
+      border: none;
+    }
+
+    input {
+      background: #e2e8f0;
+    }
+
+    button {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-green {
+      background: #22c55e;
+      color: white;
+    }
+
+    .btn-blue {
+      background: #38bdf8;
+      color: white;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>⚖️ Danny Parikh - Advocate</h1>
+
+<div class="box">
+  <h2>📍 Office Location</h2>
+
+  <p>Scan QR to open location</p>
+
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://maps.app.goo.gl/zp38Jv9ex9uzJRa98" />
+
+  <br><br>
+
+  <a href="https://maps.app.goo.gl/zp38Jv9ex9uzJRa98" target="_blank">
+    Open in Google Maps
+  </a>
+</div>
+
+<div class="box">
+  <h2>📅 Book Appointment</h2>
+
+  <form action="https://formspree.io/f/YOUR_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="tel" name="phone" placeholder="Phone Number" required><br>
+    <input type="date" name="date" required><br>
+    <input type="text" name="case" placeholder="Case Type"><br>
+
+    <button class="btn-green" type="submit">Book via Email</button>
+  </form>
+
+  <hr style="margin:20px;">
+
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <input type="tel" id="phone" placeholder="Phone Number"><br>
+  <input type="date" id="date"><br>
+  <input type="text" id="case" placeholder="Case Type"><br>
+
+  <button class="btn-blue" onclick="sendWhatsApp()">Book via WhatsApp</button>
+
+</div>
+
+<script>
+function sendWhatsApp() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let date = document.getElementById("date").value;
+  let caseType = document.getElementById("case").value;
+
+  let message = `New Appointment:%0AName: ${name}%0APhone: ${phone}%0ADate: ${date}%0ACase: ${caseType}`;
+
+  let url = "https://wa.me/91XXXXXXXXXX?text=" + message;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
